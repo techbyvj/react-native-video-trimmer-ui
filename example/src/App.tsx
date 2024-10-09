@@ -1,17 +1,10 @@
-import { useState, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-video-trimmer';
+import { StyleSheet, View } from 'react-native';
+import VideoTrimmer from 'react-native-video-trimmer-ui';
 
 export default function App() {
-  const [result, setResult] = useState<number | undefined>();
-
-  useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <VideoTrimmer source={require('../assets/sample.mp4')} />
     </View>
   );
 }
@@ -19,8 +12,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingVertical: 50,
+    backgroundColor: 'black',
   },
   box: {
     width: 60,

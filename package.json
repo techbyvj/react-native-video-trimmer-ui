@@ -1,5 +1,5 @@
 {
-  "name": "react-native-video-trimmer",
+  "name": "react-native-video-trimmer-ui",
   "version": "0.1.0",
   "description": "Trim videos in react-native",
   "source": "./src/index.tsx",
@@ -87,12 +87,13 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-video": "^6.6.4"
   },
   "workspaces": [
     "example"
   ],
-  "packageManager": "yarn@3.6.1",
+  "packageManager": "yarn@3.6.4",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
@@ -181,5 +182,8 @@
   "create-react-native-library": {
     "type": "library",
     "version": "0.41.2"
+  },
+  "dependencies": {
+    "@miblanchard/react-native-slider": "^2.6.0"
   }
 }
