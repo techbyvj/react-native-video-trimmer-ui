@@ -6,9 +6,8 @@ import { sliderStyles } from './styles';
 interface SliderProps {
   style?: ViewStyle;
   duration: number;
-  thumbs: number[];
+  thumbs: [number, number];
   playbackTime: number;
-  playbackDuration: number;
   tintColor?: string;
   onSlidingComplete: (segment: number[], value: number) => void;
 }
@@ -18,7 +17,6 @@ function Slider({
   duration,
   thumbs,
   playbackTime,
-  playbackDuration,
   onSlidingComplete,
   tintColor,
 }: SliderProps) {
@@ -37,7 +35,7 @@ function Slider({
         ])}
         minimumTrackTintColor={tintColor}
         renderMinimumTrackComponent={() => (
-          <ProgressBar value={playbackTime / playbackDuration} />
+          <ProgressBar value={playbackTime / thumbs[1]} />
         )}
         onSlidingComplete={onSlidingComplete}
         renderThumbComponent={() => (

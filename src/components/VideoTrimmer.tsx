@@ -32,7 +32,6 @@ function VideoTrimmer(props: VideoTrimmerProps, ref: Ref<unknown>) {
     onSelected,
   } = props;
   const [playbackTime, setPlaybackTime] = useState<number>(0);
-  const [playableDuration, setPlayableDuration] = useState<number>(0);
   const [duration, setDuration] = useState<number>(0);
   const [thumbs, setThumbs] = useState<[number, number]>([0, 0]);
   const videoRef = React.useRef<VideoRef | null>(null);
@@ -80,15 +79,11 @@ function VideoTrimmer(props: VideoTrimmerProps, ref: Ref<unknown>) {
     seek(thumbs[0]);
   };
 
-  const onProgress = ({
-    currentTime,
-    playableDuration: playableDurationTemp,
-  }: OnProgressData) => {
+  const onProgress = ({ currentTime }: OnProgressData) => {
     if (currentTime > thumbs[1]) {
       seek(thumbs[0]);
     }
     setPlaybackTime(currentTime);
-    setPlayableDuration(playableDurationTemp);
   };
 
   return (
@@ -109,7 +104,6 @@ function VideoTrimmer(props: VideoTrimmerProps, ref: Ref<unknown>) {
             thumbs={thumbs}
             duration={duration}
             playbackTime={playbackTime}
-            playbackDuration={playableDuration}
             onSlidingComplete={onSlidingComplete}
             tintColor={tintColor}
           />
