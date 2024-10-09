@@ -4,7 +4,10 @@ import VideoTrimmer from 'react-native-video-trimmer-ui';
 export default function App() {
   return (
     <View style={styles.container}>
-      <VideoTrimmer source={require('../assets/sample.mp4')} />
+      <VideoTrimmer
+        source={require('../assets/sample.mp4')}
+        onSelected={console.info}
+      />
     </View>
   );
 }

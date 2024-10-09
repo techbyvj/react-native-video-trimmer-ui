@@ -1,6 +1,6 @@
 # react-native-video-trimmer-ui
 
-React Native Video Trimmer is a powerful and easy-to-use component that allows you to add video trimming functionality to your React Native applications. With this library, users can easily select a specific portion of a video to trim, making it perfect for video editing apps, social media platforms, or any application that requires video manipulation.
+React Native Video Trimmer is a powerful and easy-to-use component that adds video trimming functionality to your React Native applications. Perfect for video editing apps, social media platforms, or any application requiring video manipulation.
 
 ## Key Features
 
@@ -12,7 +12,7 @@ React Native Video Trimmer is a powerful and easy-to-use component that allows y
 - Cross-platform compatibility (iOS and Android)
 - Easy integration with existing React Native projects
 
-This library leverages native video processing capabilities to ensure smooth performance and high-quality output. Whether you're building a video editing app or simply need to add trimming functionality to your existing project, react-native-video-trimmer provides a robust solution with a simple API.
+This library leverages native video processing capabilities to ensure smooth performance and high-quality output.
 
 ## Installation
 

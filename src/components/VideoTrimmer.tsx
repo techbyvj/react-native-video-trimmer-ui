@@ -57,7 +57,8 @@ function VideoTrimmer(props: VideoTrimmerProps, ref: Ref<unknown>) {
         start = stop - 0.5;
       }
     }
-    console.info('start, stop', start, stop);
+    start = parseFloat(start.toFixed(2));
+    stop = parseFloat(stop.toFixed(2));
     setThumbs([start, stop]);
     if (onSelected) onSelected(start, stop);
     seek(start);
@@ -70,7 +71,7 @@ function VideoTrimmer(props: VideoTrimmerProps, ref: Ref<unknown>) {
   };
 
   const onLoad = (data: OnLoadData) => {
-    console.info('duration', data.duration);
+    // console.info('duration', data.duration);
     if (duration) {
       return;
     }
