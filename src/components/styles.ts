@@ -4,7 +4,7 @@ export const videoTrimmerStyles = StyleSheet.create({
   container: { flex: 1 },
   slider: {
     position: 'absolute',
-    bottom: 0,
+    bottom: 20,
     width: '100%',
     alignItems: 'center',
   },
