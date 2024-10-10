@@ -5,7 +5,7 @@ React Native Video Trimmer UI is a powerful and easy-to-use UI component that ad
 
 ## Demo
 
-![Video Trimmer UI Demo](./demo.gif)
+![Video Trimmer UI Demo](https://github.com/techbyvj/public-assets/blob/main/react-native-video-trimmer-ui-demo.gif)
 
 ## Key Features
 
