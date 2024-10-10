@@ -2,6 +2,11 @@
 
 React Native Video Trimmer UI is a powerful and easy-to-use UI component that adds video trimming functionality to your React Native applications. It's perfect for video editing apps, social media platforms, or any application requiring video manipulation.
 
+
+## Demo
+
+![Video Trimmer UI Demo](./demo.gif)
+
 ## Key Features
 
 - Intuitive user interface for selecting trim range
@@ -90,4 +95,4 @@ After selecting the trim range using the VideoTrimmerUI component, you can use t
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

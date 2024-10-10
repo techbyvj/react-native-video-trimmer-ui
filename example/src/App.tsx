@@ -5,7 +5,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <VideoTrimmerUI
-        source={require('../assets/sample.mp4')}
+        source={{
+          uri: 'https://github.com/techbyvj/public-assets/raw/refs/heads/main/sample.mp4',
+        }}
         onSelected={console.info}
       />
     </View>
