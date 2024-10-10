@@ -35,7 +35,7 @@ function Slider({
         ])}
         minimumTrackTintColor={tintColor}
         renderMinimumTrackComponent={() => (
-          <ProgressBar value={playbackTime / thumbs[1]} />
+          <ProgressBar value={playbackTime / thumbs[1]} tintColor={tintColor} />
         )}
         onSlidingComplete={onSlidingComplete}
         renderThumbComponent={() => (

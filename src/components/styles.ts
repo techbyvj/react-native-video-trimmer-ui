@@ -40,10 +40,8 @@ export const sliderStyles = StyleSheet.create({
 });
 
 export const progressBarStyles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: 'transparent' },
+  container: { flex: 1, backgroundColor: '#00000050' },
   progress: {
     flex: 1,
-    opacity: 0.5,
-    backgroundColor: 'black',
   },
 });

@@ -19,10 +19,10 @@ export interface VideoTrimmerProps {
 }
 
 export interface VideoTrimmerRef {
-  getThumbs: () => [number, number];
+  getSelection: () => [number, number];
 }
 
-function VideoTrimmer(props: VideoTrimmerProps, ref: Ref<unknown>) {
+function VideoTrimmerUI(props: VideoTrimmerProps, ref: Ref<unknown>) {
   const {
     containerStyle,
     source,
@@ -36,9 +36,9 @@ function VideoTrimmer(props: VideoTrimmerProps, ref: Ref<unknown>) {
   const [thumbs, setThumbs] = useState<[number, number]>([0, 0]);
   const videoRef = React.useRef<VideoRef | null>(null);
 
-  const getThumbs = () => thumbs;
+  const getSelection = () => thumbs;
   React.useImperativeHandle(ref, () => ({
-    getThumbs,
+    getSelection,
   }));
 
   const seek = (time: number | undefined) => {
@@ -113,4 +113,4 @@ function VideoTrimmer(props: VideoTrimmerProps, ref: Ref<unknown>) {
   );
 }
 
-export default forwardRef(VideoTrimmer);
+export default forwardRef(VideoTrimmerUI);

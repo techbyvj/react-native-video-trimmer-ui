@@ -62,3 +62,24 @@ jobs:
       - name: Build example for Web
         run: |
           yarn example expo export --platform web
+
+  publish-npm:
+    needs: [build-library, test]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Build package
+        run: yarn prepare
+
+      - name: Publish to npm
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+          npm publish --access public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

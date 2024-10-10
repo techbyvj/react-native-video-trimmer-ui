@@ -4,15 +4,16 @@ import { progressBarStyles } from './styles';
 interface ProgressBarProps {
   value: number;
   style?: StyleProp<ViewStyle>;
+  tintColor: string | undefined;
 }
 
-function ProgressBar({ value, style }: ProgressBarProps) {
+function ProgressBar({ value, style, tintColor }: ProgressBarProps) {
   return (
     <View style={[progressBarStyles.container, style]}>
       <View
         style={[
           progressBarStyles.progress,
-          { width: `${Math.ceil(100 * value)}%` },
+          { width: `${Math.ceil(100 * value)}%`, backgroundColor: tintColor },
         ]}
       />
     </View>

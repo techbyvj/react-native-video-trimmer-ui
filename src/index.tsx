@@ -1,3 +1,3 @@
-import VideoTrimmer from './components/VideoTrimmer';
+import VideoTrimmerUI from './components/VideoTrimmer';
 
-export default VideoTrimmer;
+export default VideoTrimmerUI;

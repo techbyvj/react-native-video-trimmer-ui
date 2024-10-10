@@ -1,10 +1,10 @@
 import { StyleSheet, View } from 'react-native';
-import VideoTrimmer from 'react-native-video-trimmer-ui';
+import VideoTrimmerUI from 'react-native-video-trimmer-ui';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <VideoTrimmer
+      <VideoTrimmerUI
         source={require('../assets/sample.mp4')}
         onSelected={console.info}
       />
