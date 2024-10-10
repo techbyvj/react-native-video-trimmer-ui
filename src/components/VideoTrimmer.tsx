@@ -113,4 +113,4 @@ function VideoTrimmerUI(props: VideoTrimmerProps, ref: Ref<unknown>) {
   );
 }
 
-export default forwardRef(VideoTrimmerUI);
+export default forwardRef<VideoTrimmerRef, VideoTrimmerProps>(VideoTrimmerUI);
