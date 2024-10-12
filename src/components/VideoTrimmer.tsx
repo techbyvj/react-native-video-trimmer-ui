@@ -16,11 +16,14 @@ export interface VideoTrimmerProps {
   sliderContainerStyle?: ViewStyle;
   tintColor?: string;
   onSelected?: (start: number, end: number) => void;
+  minDuration?: number;
 }
 
 export interface VideoTrimmerRef {
   getSelection: () => [number, number];
 }
+
+const MIN_DURATION = 1;
 
 function VideoTrimmerUI(props: VideoTrimmerProps, ref: Ref<unknown>) {
   const {
@@ -30,6 +33,7 @@ function VideoTrimmerUI(props: VideoTrimmerProps, ref: Ref<unknown>) {
     sliderContainerStyle,
     tintColor = '#24a0ed',
     onSelected,
+    minDuration = MIN_DURATION,
   } = props;
   const [playbackTime, setPlaybackTime] = useState<number>(0);
   const [duration, setDuration] = useState<number>(0);
@@ -48,16 +52,16 @@ function VideoTrimmerUI(props: VideoTrimmerProps, ref: Ref<unknown>) {
   };
 
   const onSlidingComplete = (value: number[], thumb: number) => {
-    let [start = 0, stop = 0.5] = value || [];
-    if (stop - start < 0.5) {
+    let [start = 0, stop = minDuration] = value || [];
+    if (stop - start < minDuration) {
       if (thumb) {
-        stop = start + 0.5;
+        stop = start + minDuration;
       } else {
-        start = stop - 0.5;
+        start = stop - minDuration;
       }
     }
-    start = parseFloat(start.toFixed(2));
-    stop = parseFloat(stop.toFixed(2));
+    start = parseFloat(start.toFixed(1));
+    stop = stop === duration ? duration : parseFloat(stop.toFixed(1));
     setThumbs([start, stop]);
     if (onSelected) onSelected(start, stop);
     seek(start);

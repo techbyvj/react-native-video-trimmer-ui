@@ -37,6 +37,13 @@ export const sliderStyles = StyleSheet.create({
     fontSize: 30,
     color: 'gray',
   },
+  text: {
+    alignSelf: 'center',
+    fontSize: 18,
+    fontWeight: '700',
+    color: 'white',
+    marginBottom: 5,
+  },
 });
 
 export const progressBarStyles = StyleSheet.create({

@@ -54,6 +54,7 @@ Then, use the VideoTrimmerUI component in your JSX:
 | containerStyle | ViewStyle | - | Custom styles for the container of the VideoTrimmerUI component |
 | sliderContainerStyle | ViewStyle | - | Custom styles for the slider container |
 | tintColor | string | '#24A0ED' | Color of the slider and its components |
+| minDuration | number | 1 | Minimum duration (in seconds) for the trimmed video section |
 
 ### Methods
 

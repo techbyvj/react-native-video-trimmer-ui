@@ -22,6 +22,9 @@ function Slider({
 }: SliderProps) {
   return (
     <View style={[sliderStyles.container, style]}>
+      <Text style={sliderStyles.text}>
+        {parseFloat((thumbs[1] - thumbs[0]).toFixed(1))}s
+      </Text>
       <RNSlider
         animateTransitions
         animationType="spring"
