@@ -76,6 +76,9 @@ function VideoTrimmerUI(props: VideoTrimmerProps, ref: Ref<unknown>) {
   const onLoad = (data: OnLoadData) => {
     // console.info('duration', data.duration);
     if (duration) {
+      if (thumbs[0] !== 0) {
+        seek(thumbs[0]);
+      }
       return;
     }
     setDuration(data.duration);
@@ -85,7 +88,9 @@ function VideoTrimmerUI(props: VideoTrimmerProps, ref: Ref<unknown>) {
 
   const onProgress = ({ currentTime }: OnProgressData) => {
     if (currentTime > thumbs[1]) {
-      seek(thumbs[0]);
+      if (loop) {
+        seek(thumbs[0]);
+      }
     }
     setPlaybackTime(currentTime);
   };
